@@ -3,13 +3,14 @@
 <head>
 <title>Kersalu Rent</title>
 <link rel="icon" type="image/x-icon" href="muu/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
     @font-face {
         font-family: 'Proxima Nova';
-        src: url('Proxima Nova/proximanova_bold.otf') format('otf');
+        src: url('ProximaNova/proximanova_bold.otf') format('otf');
         font-weight: normal;
         font-style: normal;
     }
@@ -83,27 +84,11 @@
     
 </style>
 <style>
-    a:link {
+    a:link, a:visited, a:active, a:hover {
         color: white;
         background-color: transparent;
         text-decoration: none;
-        font-family:Helvetica,Arial,sans-serif;
-        font-size: 18px;
-    }
-
-    a:visited {
-        color: white;
-        background-color: transparent;
-        text-decoration: none;
-        font-family:Helvetica,Arial,sans-serif;
-        font-size: 18px;
-    }
-
-    a:active {
-        color: white;
-        background-color: transparent;
-        text-decoration: none;
-        font-family:Helvetica,Arial,sans-serif;
+        font-family: Helvetica,Arial,sans-serif;
         font-size: 18px;
     }
 </style>
@@ -116,7 +101,6 @@
         position: sticky;
         top: 0;
         background: #212529;
-        color: white;
         padding: 15px;
         text-align: left;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -267,6 +251,56 @@
         color: white;
     }
 
+    .slide-search {
+        display: flex;
+        width: calc(100% - 30px);
+        border: 1px solid #212529;
+        box-sizing: border-box;
+        margin-left: 15px;
+        padding: 5px 0;
+        align-items: stretch;   
+        overflow: visible;
+    }
+
+    .slide-search input[type="text"],
+    .slide-search button {
+        min-height: 44px;       
+        height: auto;           
+        box-sizing: border-box; 
+        border-radius: 0 !important;
+        -webkit-appearance: none;    
+        appearance: none;
+    }
+
+    .slide-search input[type="text"] {
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        background: #f1f1f1;
+        width: 85%;
+    }
+
+    .slide-search button {
+        border: none;
+        background: #919191;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 15%;
+    }
+
+    .slide-search input[type="text"]:focus,
+    .slide-search button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+
+    .slide-search button:hover {
+        background: #0b7dda;
+    }
+
+
     .dropdown-label{
         cursor: default;
         pointer-events: none;
@@ -386,7 +420,6 @@
         z-index: 10;
         opacity: 0.7;
         transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        color: white;
     }
 
     .prev { 
@@ -421,14 +454,6 @@
 </style>
 <style>
     @media (hover: hover) and (pointer: fine) {
-        a:hover {
-            color: white;
-            background-color: transparent;
-            text-decoration: none;
-            font-family:Helvetica,Arial,sans-serif;
-            font-size: 18px;
-        }
-
         .icon:hover {
             transform: scale(1.1); 
         }
@@ -460,7 +485,7 @@
     <div class="image-wrapper">
         <img src="muu/Taust.jpg" class="background-img" alt="Kersalu" />
 
-        <img src="muu/taust.png" class="logo-shadow" alt="Taust">
+        <img src="muu/taustataust.jpg" class="logo-shadow" alt="Taust">
 
         <img src="muu/KersalurentV2.png" class="logo-overlay" alt="Logo" />
     </div>
@@ -492,7 +517,6 @@
                 <img src="muu/google_maps.png" alt="Google Maps" class="maps-icon"/>
             </a>
         </div>
-        
         <div class="nav-menu">
             <div class="menu-toggle" id="menu-toggle">
                 <span></span>
@@ -502,10 +526,14 @@
         </div>
 
         <div class="dropdown-menu" id="dropdown-menu">
+            <div class="slide-search">
+                <input type="text" id="slideSearch" placeholder="Otsi toodet/sektsiooni…"/>
+                <button id="searchBtn"><i class="fa fa-search"></i></button>
+            </div>
             <a href="info.html">Üldinfo ja maksetingimused</a>
             <div class="dropdown-label">Rent:</div>
             <a href="#c1">Veo-, tõste-, kaevetööd</a>
-            <a href="#c2">Paadisõit ja kalapüük</a>
+            <a href="#c2">Paadisõit-kalapüük</a>
             <a href="#c3">Keevitus,suruõhk ja gaasipõleti</a>
             <a href="#c4">Muruhooldus</a>
             <a href="#c5">Aia- ja metsatööd</a>
@@ -531,41 +559,41 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Veo,Tõste,Kaeve/Kopp.jpg" alt="Clone Last" />
+                        <img src="Veo-Tõste-Kaeve/Kopp.jpg" alt="Clone Last" />
                         <h1>Kopplaadur</h1>
                         <p>Päeva rent: 100€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Veo,Tõste,Kaeve/Treiler.jpg" alt="Slide 1" />
+                        <img src="Veo-Tõste-Kaeve/Treiler.jpg" alt="Slide 1" />
                         <h1>Haagis</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Veo,Tõste,Kaeve/paadihaa.jpg" alt="Slide 2" />
+                        <img src="Veo-Tõste-Kaeve/paadihaa.jpg" alt="Slide 2" />
                         <h1>Paadihaagis</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Veo,Tõste,Kaeve/miniekskavaator.jpg" alt="Slide 3" />
+                        <img src="Veo-Tõste-Kaeve/miniekskavaator.jpg" alt="Slide 3" />
                         <h1>Miniekskavaator</h1>
                         <p>Päeva rent: 150€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Veo,Tõste,Kaeve/tostuk.jpg" alt="Slide 4" />
+                        <img src="Veo-Tõste-Kaeve/tostuk.jpg" alt="Slide 4" />
                         <h1>Tõstuk</h1>
                         <p>Päeva rent: 50€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Veo,Tõste,Kaeve/Kopp.jpg" alt="Slide 5" />
+                        <img src="Veo-Tõste-Kaeve/Kopp.jpg" alt="Slide 5" />
                         <h1>Kopplaadur</h1>
                         <p>Päeva rent: 100€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Veo,Tõste,Kaeve/Treiler.jpg" alt="Clone First" />
+                        <img src="Veo-Tõste-Kaeve/Treiler.jpg" alt="Clone First" />
                         <h1>Haagis</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
@@ -609,36 +637,36 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Paadisõit ja kalapüük/honda2.3.png" alt="Clone Last" />
+                        <img src="Paadisõit-kalapüük/honda2.3.jpg" alt="Clone Last" />
                         <h1>Honda 2.3</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Paadisõit ja kalapüük/Bella.png" alt="Slide 1" />
+                        <img src="Paadisõit-kalapüük/Bella.jpg" alt="Slide 1" />
                         <h1>Mootorpaat Bella</h1>
                         <p>Päeva rent: 45€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Paadisõit ja kalapüük/minn kota700x700.jpg" alt="Slide 2" />
+                        <img src="Paadisõit-kalapüük/minn_kota700x700.jpg" alt="Slide 2" />
                         <h1>Minn Kota 30LBS</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Paadisõit ja kalapüük/yamaha9.9.jpg" alt="Slide 3" />
+                        <img src="Paadisõit-kalapüük/yamaha9.9.jpg" alt="Slide 3" />
                         <h1>Yamaha 9.9</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Paadisõit ja kalapüük/honda2.3.png" alt="Slide 4" />
+                        <img src="Paadisõit-kalapüük/honda2.3.jpg" alt="Slide 4" />
                         <h1>Honda 2.3</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Paadisõit ja kalapüük/Bella.png" alt="Clone First" />
+                        <img src="Paadisõit-kalapüük/Bella.jpg" alt="Clone First" />
                         <h1>Mootorpaat Bella</h1>
                         <p>Päeva rent: 45€</p>
                     </div>
@@ -674,39 +702,39 @@
         <!--3-->
         <div class="carousel-container" id="c3">
             <div class="carousel-top">
-                <h1>KEEVITUS, SURUÕHK JA GAASIPÕLETI</h1>
-                <p>Keevitusaparaat, kompressor, gaasipõleti</p>
+                <h1>KEEVITUSSEADMED, KEEVITUSTARVIKUD JA SURUÕHK</h1>
+                <p>Keevitusaparaat, gaasipõleti, kompressor</p>
             </div>
             
             <div class="custom-carousel">
                 <div class="carousel-track">
                     <!-- Clone last -->
                     <div class="carousel-slide clone">
-                        <img src="Keevitus, suruõhk/gaasip.png" alt="Clone Last" />
-                        <h1>Gaasipõleti</h1>
+                        <img src="Keevitus-suruõhk/Õhukompressor.jpg" alt="Clone Last" />
+                        <h1>Õhukompressor</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Keevitus, suruõhk/Keevitusaparaat.jpg" alt="Slide 1" />
+                        <img src="Keevitus-suruõhk/Keevitusaparaat.jpg" alt="Slide 1" />
                         <h1>Keevitusaparaat</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Keevitus, suruõhk/Õhukompressor.jpg" alt="Slide 2" />
-                        <h1>Õhukompressor</h1>
+                        <img src="Keevitus-suruõhk/gaasip.jpg" alt="Slide 2" />
+                        <h1>Gaasipõleti</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Keevitus, suruõhk/gaasip.png" alt="Slide 3" />
-                        <h1>Gaasipõleti</h1>
+                        <img src="Keevitus-suruõhk/Õhukompressor.jpg" alt="Slide 3" />
+                        <h1>Õhukompressor</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Keevitus, suruõhk/Keevitusaparaat.jpg" alt="Clone First" />
+                        <img src="Keevitus-suruõhk/Keevitusaparaat.jpg" alt="Clone First" />
                         <h1>Keevitusaparaat</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
@@ -750,36 +778,36 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Muru hooldus/Mururull.jpg" alt="Clone Last" />
+                        <img src="Muruhooldus/Mururull.jpg" alt="Clone Last" />
                         <h1>Mururull</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Muru hooldus/Murutraktor.jpg" alt="Slide 1" />
+                        <img src="Muruhooldus/Murutraktor.jpg" alt="Slide 1" />
                         <h1>Murutraktor</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Muru hooldus/Murutrimmer.jpg" alt="Slide 2" />
+                        <img src="Muruhooldus/Murutrimmer.jpg" alt="Slide 2" />
                         <h1>Murutrimmer</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Muru hooldus/Muruõhutaja.jpg" alt="Slide 3" />
+                        <img src="Muruhooldus/Muruõhutaja.jpg" alt="Slide 3" />
                         <h1>Muruõhutaja</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Muru hooldus/Mururull.jpg" alt="Slide 4" />
+                        <img src="Muruhooldus/Mururull.jpg" alt="Slide 4" />
                         <h1>Mururull</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Muru hooldus/Murutraktor.jpg" alt="Clone First" />
+                        <img src="Muruhooldus/Murutraktor.jpg" alt="Clone First" />
                         <h1>Murutraktor</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -823,46 +851,46 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Aia, metsatööd/tänavapuhastusmasin.jpg" alt="Clone Last" />
+                        <img src="Aia-metsatööd/tänavapuhastusmasin.jpg" alt="Clone Last" />
                         <h1>Tänavapuhastusmasin</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/Võsalõikur.png" alt="Slide 1" />
+                        <img src="Aia-metsatööd/Võsalõikur.jpg" alt="Slide 1" />
                         <h1>Võsalõikur</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/Hekilõikur.png" alt="Slide 2" />
+                        <img src="Aia-metsatööd/Hekilõikur.jpg" alt="Slide 2" />
                         <h1>Hekilõikur</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/Mootorsaag.jpg" alt="Slide 3" />
+                        <img src="Aia-metsatööd/Mootorsaag.jpg" alt="Slide 3" />
                         <h1>Mootorsaag</h1>
                         <p>Päeva rent: 25€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/puulõhkuja.png" alt="Slide 4" />
+                        <img src="Aia-metsatööd/puulõhkuja.jpg" alt="Slide 4" />
                         <h1>Puulõhkuja</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/lehepuhur.jpg" alt="Slide 5" />
+                        <img src="Aia-metsatööd/lehepuhur.jpg" alt="Slide 5" />
                         <h1>Lehepuhur</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Aia, metsatööd/tänavapuhastusmasin.jpg" alt="Slide 6" />
+                        <img src="Aia-metsatööd/tänavapuhastusmasin.jpg" alt="Slide 6" />
                         <h1>Tänavapuhastusmasin</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Aia, metsatööd/Võsalõikur.png" alt="Clone First" />
+                        <img src="Aia-metsatööd/Võsalõikur.jpg" alt="Clone First" />
                         <h1>Võsalõikur</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -974,31 +1002,31 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Segu ja betoon/vibronui.jpg" alt="Clone Last" />
+                        <img src="Segu_betoon/vibronui.jpg" alt="Clone Last" />
                         <h1>Vibronui</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Segu ja betoon/Segumasin.jpg" alt="Slide 1" />
+                        <img src="Segu_betoon/Segumasin.jpg" alt="Slide 1" />
                         <h1>Segumasin</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Segu ja betoon/käsi- segumikser.jpg" alt="Slide 2" />
+                        <img src="Segu_betoon/käsi-segumikser.jpg" alt="Slide 2" />
                         <h1>Käsi-segumikser</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Segu ja betoon/vibronui.jpg" alt="Slide 3" />
+                        <img src="Segu_betoon/vibronui.jpg" alt="Slide 3" />
                         <h1>Vibronui</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Segu ja betoon/Segumasin.jpg" alt="Clone first" />
+                        <img src="Segu_betoon/Segumasin.jpg" alt="Clone first" />
                         <h1>Segumasin</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -1042,36 +1070,36 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="Saagimis ja lõikamistööd/ketaslõikur.jpg" alt="Clone Last" />
+                        <img src="Saagimis_lõikamistööd/ketaslõikur.jpg" alt="Clone Last" />
                         <h1>Ketaslõikur</h1>
                         <p>Päeva rent: 25€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="Saagimis ja lõikamistööd/akuketassaag.jpg" alt="Slide 1" />
+                        <img src="Saagimis_lõikamistööd/akuketassaag.jpg" alt="Slide 1" />
                         <h1>Akuketassaag</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Saagimis ja lõikamistööd/nurgasaag.jpg" alt="Slide 2" />
+                        <img src="Saagimis_lõikamistööd/nurgasaag.jpg" alt="Slide 2" />
                         <h1>Nurgasaag</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Saagimis ja lõikamistööd/akutikksaag.jpg" alt="Slide 3" />
+                        <img src="Saagimis_lõikamistööd/akutikksaag.jpg" alt="Slide 3" />
                         <h1>Akutikksaag</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="Saagimis ja lõikamistööd/ketaslõikur.jpg" alt="Slide 4" />
+                        <img src="Saagimis_lõikamistööd/ketaslõikur.jpg" alt="Slide 4" />
                         <h1>Ketaslõikur</h1>
                         <p>Päeva rent: 25€</p>
                     </div>
 
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="Saagimis ja lõikamistööd/akuketassaag.jpg" alt="Clone First" />
+                        <img src="Saagimis_lõikamistööd/akuketassaag.jpg" alt="Clone First" />
                         <h1>Akuketassaag</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -1115,31 +1143,31 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="puurimis ja piikamistööd/akupiikvasar.jpg" alt="Clone Last" />
+                        <img src="puurimis_piikamistööd/akupiikvasar.jpg" alt="Clone Last" />
                         <h1>Akupiikvasar</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
                     
                     <!-- Real slides -->
                     <div class="carousel-slide">
-                        <img src="puurimis ja piikamistööd/akutrell.jpg" alt="Slide 1" />
+                        <img src="puurimis_piikamistööd/akutrell.jpg" alt="Slide 1" />
                         <h1>Akutrell</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="puurimis ja piikamistööd/akupuurvasar.jpg" alt="Slide 2" />
+                        <img src="puurimis_piikamistööd/akupuurvasar.jpg" alt="Slide 2" />
                         <h1>Akupuurvasar</h1>
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="puurimis ja piikamistööd/akupiikvasar.jpg" alt="Slide 3" />
+                        <img src="puurimis_piikamistööd/akupiikvasar.jpg" alt="Slide 3" />
                         <h1>Akupiikvasar</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
     
                     <!-- Clone first -->
                     <div class="carousel-slide clone">
-                        <img src="puurimis ja piikamistööd/akutrell.jpg" alt="Clone First" />
+                        <img src="puurimis_piikamistööd/akutrell.jpg" alt="Clone First" />
                         <h1>Akutrell</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -1215,12 +1243,12 @@
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="puhastustööd/vee ja tolmuimeja.jpeg" alt="Slide 6" />
+                        <img src="puhastustööd/vee-tolmuimeja.jpeg" alt="Slide 6" />
                         <h1>Vee- ja tolmuimeja</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="puhastustööd/aknapesurobot.png" alt="Slide 7" />
+                        <img src="puhastustööd/aknapesurobot.jpg" alt="Slide 7" />
                         <h1>Aknapesurobot</h1>
                         <p>Päeva rent: 15€</p>
                     </div>
@@ -1359,7 +1387,7 @@
                 <div class="carousel-track">
                     <!-- Clone last-->
                     <div class="carousel-slide clone">
-                        <img src="mõõtmistööd/laser kaugusemõõtja.jpg" alt="Clone Last" />
+                        <img src="mõõtmistööd/laserkaugusemõõtja.jpg" alt="Clone Last" />
                         <h1>Laserkaugusmõõtja</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
@@ -1376,7 +1404,7 @@
                         <p>Päeva rent: 10€</p>
                     </div>
                     <div class="carousel-slide">
-                        <img src="mõõtmistööd/laser kaugusemõõtja.jpg" alt="Slide 3" />
+                        <img src="mõõtmistööd/laserkaugusemõõtja.jpg" alt="Slide 3" />
                         <h1>Laserkaugusmõõtja</h1>
                         <p>Päeva rent: 18€</p>
                     </div>
@@ -1434,6 +1462,9 @@
         bgImage.style.filter = `brightness(${brightness})`;
     });
     </script>
+
+    <!-- Search -->
+    <script src="search.js"></script>
 
     <!-- Carousel -->
     <script src="carousel.js"></script>

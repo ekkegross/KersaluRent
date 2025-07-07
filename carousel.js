@@ -87,4 +87,11 @@ document.querySelectorAll('.custom-carousel').forEach(carousel => {
     });
 
     setPositionByIndex(false);
+
+    carousel.goToSlide = function(index) {
+      if (typeof index !== 'number' || index < 0 || index >= slides.length) return;
+      currentIndex = index;
+      setPositionByIndex();
+      updateDots();
+    };
 });
